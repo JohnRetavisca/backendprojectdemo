@@ -12,7 +12,8 @@
                         <th>Nombre calle</th>
                         <th>Ciudad</th>
                         <th>Departamento</th>
-                        <th>Acciones</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,7 +25,9 @@
                         <td>{{direccion.departamento}}</td>
                         <td>
                             <button routerLink="/editar/{{direccion.id}}" class="btn btn-danger">Editar</button>
-                            <button style="margin-left: 10px;" class="btn btn-danger">Eliminar</button>
+                        </td>
+                        <td>
+                            <button style="margin-left: 10px;" (click)="borrar(direccion.id)" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>        

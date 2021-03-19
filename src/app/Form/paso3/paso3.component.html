@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Direcciones</h3>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <h5>Ingrese la direccion de su empleo actual.</h5>
+                    <div class="mb-2 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Numero de calle</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputPassword" style="width: 150px;">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Nombre de calle</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputPassword" style="width: 250px;">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Departamento</label>
+                        <select class="form-select" style="width: 250px;">
+                            <option selected>Seleccione</option>
+                            <option value="1">Antioquia</option>
+                            <option value="2">Bogota</option>
+                            <option value="3">Cundinamarca</option>
+                          </select>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Ciudad</label>
+                        <select class="form-select" style="width: 250px;">
+                            <option selected>Seleccione</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Codigo Postal</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputPassword" style="width: 100px;">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button (click)="Paso2()" class="btn btn-danger">Volver</button>
+            <button (click)="Paso4()" class="btn btn-danger" style="margin-left: 10px;">Siguiente</button>
+        </div>
+    </div>
+</div>

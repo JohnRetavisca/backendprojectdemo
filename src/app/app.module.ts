@@ -12,6 +12,14 @@ import { Paso2Component } from './Form/paso2/paso2.component';
 import { Paso3Component } from './Form/paso3/paso3.component';
 import { Paso4Component } from './Form/paso4/paso4.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+//Externo
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ResumenComponent } from './Form/resumen/resumen.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +30,16 @@ import { Paso4Component } from './Form/paso4/paso4.component';
     Paso1Component,
     Paso2Component,
     Paso3Component,
-    Paso4Component
+    Paso4Component,
+    ResumenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

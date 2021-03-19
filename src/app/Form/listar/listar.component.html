@@ -7,21 +7,23 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
-                        <th>Direccion Domicilio</th>
-                        <th>Direccion Padres</th>
-                        <th>Direccion Empleo</th>
-                        <th>Direccion Empleo Anterior</th>
+                        <th>Id</th>
+                        <th>Numero calle</th>
+                        <th>Nombre calle</th>
+                        <th>Ciudad</th>
+                        <th>Departamento</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let direccion of direcciones" class="text-center">
+                        <td>{{direccion.id}}</td>
+                        <td>{{direccion.numerocalle}}</td>
+                        <td>{{direccion.nombrecalle}}</td>
+                        <td>{{direccion.ciudad}}</td>
+                        <td>{{direccion.departamento}}</td>
                         <td>
-                            <button class="btn btn-danger">Editar</button>
+                            <button routerLink="/editar/{{direccion.id}}" class="btn btn-danger">Editar</button>
                             <button style="margin-left: 10px;" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>

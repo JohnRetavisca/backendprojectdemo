@@ -11,13 +11,14 @@ import { Paso4Component } from './Form/paso4/paso4.component';
 
 const routes: Routes = [
   {path:"ingresar", component:IngresarComponent},
-  {path:"editar", component:EditarComponent},
+  {path:"editar/:id", component:EditarComponent},
   {path:"listar", component:ListarComponent},
-  {path:"eliminar", component:EliminarComponent},
+  {path:"eliminar/:id", component:EliminarComponent},
   {path:"paso1", component:Paso1Component},
   {path:"paso2", component:Paso2Component},
   {path:"paso3", component:Paso3Component},
-  {path:"paso4", component:Paso4Component}
+  {path:"paso4", component:Paso4Component},
+  {path:"**", redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({

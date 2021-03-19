@@ -4,36 +4,45 @@
             <h3>Resumen</h3>
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="mb-3">
+                    <h5>Ingrese la direccion de su trabajo anterior.</h5>
                     <div class="mb-2 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Dirección Domicilio</label>
+                        <label for="numerocalle" class="col-sm-2 col-form-label">Numero de calle</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputPassword" style="width: 600px;" disabled>
+                          <input type="text" class="form-control" id="numerocalle" name="numerocalle" style="width: 150px;" [(ngModel)]="numerocalle" required>
                         </div>
                     </div>
                     <div class="mb-2 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Dirección de madre o padre</label>
+                        <label for="nombrecalle" class="col-sm-2 col-form-label">Nombre de calle</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputPassword" style="width: 600px;" disabled>
+                          <input type="text" class="form-control" id="nombrecalle" name="nombrecalle" style="width: 250px;" [(ngModel)]="nombrecalle" required>
                         </div>
                     </div>
                     <div class="mb-2 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Dirección de empleo actual</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputPassword" style="width: 600px;" disabled>
-                        </div>
+                        <label for="departamento" class="col-sm-2 col-form-label">Departamento</label>
+                        <select [(ngModel)]="selectedDepartamento.id" (change)="cargarCiudades($any($event.target).value)" class="form-select" style="width: 250px;" name="departamento" [(ngModel)]="departamento" required>
+                            <option value="0" selected>Seleccione</option>
+                            <option *ngFor="let departamento of departamentos" value="{{departamento.id}}">{{departamento.nombre}}</option>
+                          </select>
                     </div>
                     <div class="mb-2 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Dirección de empleo anterior</label>
+                        <label for="ciudad" class="col-sm-2 col-form-label">Ciudad</label>
+                        <select class="form-select" style="width: 250px;" name="ciudad" [(ngModel)]="ciudad" required>
+                            <option value="0" selected>Seleccione</option>
+                            <option *ngFor="let ciudad of ciudades" value="{{ciudad.id}}">{{ciudad.nombre}}</option>
+                          </select>
+
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="codpostal" class="col-sm-2 col-form-label">Codigo Postal</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputPassword" style="width: 600px;" disabled>
+                          <input type="text" class="form-control" id="codpostal" name="codpostal" style="width: 100px;" [(ngModel)]="codpostal" required>
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-danger btn-block" [disabled]="!f.valid">Siguiente</button>
             </form>
-            <button (click)="Paso3()" class="btn btn-danger">Volver</button>
-            <button (click)="Paso4()" class="btn btn-danger" style="margin-left: 10px;">Finalizar</button>
         </div>
     </div>
 </div>
